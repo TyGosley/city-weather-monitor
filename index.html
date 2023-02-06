@@ -18,31 +18,33 @@
     </header>
 
     <section class="d-flex">
-        <div class="container">
-            <form class="searchBar row col-6 d-flex" role="search">
-                <h2>Seach for a City:</h2>
-                <input id="cities" class="form-control me-" type="search" placeholder="Enter City Here"
-                    aria-label="Search">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                <div class="searchHistory">
-                </div>
-            </form>
 
-            <section class="col-8">
-                <div class="container">
-                    <h4 id="display"></h4>
-                    <h5 id="temp"></h5>
-                    <h5 id="wind"></h5>
-                    <h5 id="humidity"></h5>
-                </div>
-            </section>
-            <section class="row container2">
-                <h4>5-Day Forecast:</h4>
+        <form class="searchBar row col-3 d-flex" role="search">
+            <h2>Seach for a City:</h2>
+            <input id="cities" class="form-control me-2" type="search" placeholder="Enter City Here"
+                aria-label="Search">
+            <button id="searchBtn" class="btn btn-primary" type="submit">Search</button>
+            <div class="searchHistory">
+            </div>
+        </form>
+
+
+        <section class="col-9">
+            <div class="container">
+                <h4 id="display"></h4>
+                <h5 id="temp"></h5>
+                <h5 id="wind"></h5>
+                <h5 id="humidity"></h5>
+            </div>
+            <div class="row container2">
+                <h5>5-Day Forecast:</h5>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4" id="forecastResults">
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </section>
+
+   
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

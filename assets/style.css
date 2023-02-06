@@ -18,15 +18,27 @@ header {
     
 }
 
+
 .searchbar {
     flex-direction: column;
     margin-right: 3.125rem;
     margin-left: .625rem;
+    border-radius: .5rem;
+}
+
+#cities {
+    background-color: var(--white-coffee);
+    color: black;
+    font-weight: bolder;
+    border-radius: .5rem;
 }
 
 .container {
     border: .0625rem solid black;
+    border-radius: .5rem;
+    background-color: var(--white-coffee);
     padding: .625rem;
+    margin-left: 1.5625rem;
 }
 
 .container h4 {
@@ -38,7 +50,9 @@ header {
 }
 
 .container2 {
-    margin-top: 25px;
+    margin-top: 1.5625rem;
+    margin-left: 1.5625rem;
+
 }
 
 .searchHistory {
@@ -54,13 +68,13 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    margin-top: 0.625rem;
 }
 
 #searchBtn {
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 img {

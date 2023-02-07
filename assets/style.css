@@ -33,7 +33,7 @@ header {
     border-radius: .5rem;
 }
 
-.container {
+.containerMain {
     border: .0625rem solid black;
     border-radius: .5rem;
     background-color: var(--white-coffee);
@@ -41,15 +41,15 @@ header {
     margin-left: 1.5625rem;
 }
 
-.container h4 {
+.containerMain h4 {
     font-weight: bold;
 }
 
-.container h5 {
+.containerMain h5 {
     font-size: 90%;
 }
 
-.container2 {
+.container5Day {
     margin-top: 1.5625rem;
     margin-left: 1.5625rem;
 
@@ -62,7 +62,7 @@ header {
     justify-content: center;
 }
 
-.searchHistory button {
+.searchHistory previousSearchBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,7 +77,10 @@ header {
     margin-top: 0.625rem;
 }
 
-img {
+icons {
     width: 3.125rem;
     height: 3.125rem;
-}
+} 
+
+
+    

@@ -9,6 +9,7 @@ const currentHumidityEL = document.querySelector("#humidity");
 const citiesEl = document.querySelector("#cities");
 const searchBtn = document.querySelector("#searchBtn");
 const historyList = document.querySelector(".searchHistory");
+const searchHistoryContainer = document.querySelector('.searchHistory');
 // const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
 const citiesArray = [];
 
@@ -28,16 +29,30 @@ function userInput(city) {
 // TODO: create search history buttons *Local Storage*
 // TODO: create function to making btns
 function userSearchButtons(userInput) {
+    console.log(citiesArray)
     const cityBtn = document.createElement("button");
     cityBtn.setAttribute("type", "button");
-    cityBtn.innerHTML = citiesArray;
-    cityBtn.addEventListener("click", (getWeather) =>{ 
+    cityBtn.classList.add('history-btn', 'btn-history');
+    cityBtn.setAttribute('data-search', citiesArray);
+    cityBtn.textContent = citiesArray;
+
+    cityBtn.addEventListener("click", (getWeather) => {
     });
     historyList.appendChild(cityBtn)
-   
 }
-    
-    
+
+function handleSearchHistoryClick(e) {
+    // Don't do search if current elements is not a search history button
+    if (!e.target.matches('.btn-history')) {
+        return;
+    }
+
+    var btn = e.target;
+    var search = btn.getAttribute('data-search');
+    console.log(search);
+}
+searchHistoryContainer.addEventListener("click", handleSearchHistoryClick);
+
 
 function getWeather(event, city) {
     event.preventDefault();
@@ -61,36 +76,36 @@ function getWeather(event, city) {
                 .then(data => data.json())
                 .then(res => {
                     console.log(res);
-                    $("#display-1").text( `${city} (${dayjs().add(1, "days").format("MMMM DD, YYYY")})`);
-                    $("#temp-1").text( `Temp: ${res.list[3].main.temp} °F`);
-                    $("#wind-1").text( `Wind: ${res.list[3].wind.speed} MPH`);
-                    $("#humidity-1").text( `Humidity: ${res.list[3].main.humidity} %`);
+                    $("#display-1").text(`${city} (${dayjs().add(1, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-1").text(`Temp: ${res.list[3].main.temp} °F`);
+                    $("#wind-1").text(`Wind: ${res.list[3].wind.speed} MPH`);
+                    $("#humidity-1").text(`Humidity: ${res.list[3].main.humidity} %`);
 
-                    $("#display-2").text( `${city} (${dayjs().add(2, "days").format("MMMM DD, YYYY")})`);
-                    $("#temp-2").text( `Temp: ${res.list[11].main.temp} °F`);
-                    $("#wind-2").text( `Wind: ${res.list[11].wind.speed} MPH`);
-                    $("#humidity-2").text( `Humidity: ${res.list[11].main.humidity} %`);
+                    $("#display-2").text(`${city} (${dayjs().add(2, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-2").text(`Temp: ${res.list[11].main.temp} °F`);
+                    $("#wind-2").text(`Wind: ${res.list[11].wind.speed} MPH`);
+                    $("#humidity-2").text(`Humidity: ${res.list[11].main.humidity} %`);
 
-                    $("#display-3").text( `${city} (${dayjs().add(3, "days").format("MMMM DD, YYYY")})`);
-                    $("#temp-3").text( `Temp: ${res.list[19].main.temp} °F`);
-                    $("#wind-3").text( `Wind: ${res.list[19].wind.speed} MPH`);
-                    $("#humidity-3").text( `Humidity: ${res.list[19].main.humidity} %`);
+                    $("#display-3").text(`${city} (${dayjs().add(3, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-3").text(`Temp: ${res.list[19].main.temp} °F`);
+                    $("#wind-3").text(`Wind: ${res.list[19].wind.speed} MPH`);
+                    $("#humidity-3").text(`Humidity: ${res.list[19].main.humidity} %`);
 
-                    $("#display-4").text( `${city} (${dayjs().add(4, "days").format("MMMM DD, YYYY")})`);
-                    $("#temp-4").text( `Temp: ${res.list[27].main.temp} °F`);
-                    $("#wind-4").text( `Wind: ${res.list[27].wind.speed} MPH`);
-                    $("#humidity-4").text( `Humidity: ${res.list[27].main.humidity} %`);
+                    $("#display-4").text(`${city} (${dayjs().add(4, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-4").text(`Temp: ${res.list[27].main.temp} °F`);
+                    $("#wind-4").text(`Wind: ${res.list[27].wind.speed} MPH`);
+                    $("#humidity-4").text(`Humidity: ${res.list[27].main.humidity} %`);
 
-                    $("#display-5").text( `${city} (${dayjs().add(5, "days").format("MMMM DD, YYYY")})`);
-                    $("#temp-5").text( `Temp: ${res.list[35].main.temp} °F`);
-                    $("#wind-5").text( `Wind: ${res.list[35].wind.speed} MPH`);
-                    $("#humidity-5").text( `Humidity: ${res.list[35].main.humidity} %`);
+                    $("#display-5").text(`${city} (${dayjs().add(5, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-5").text(`Temp: ${res.list[35].main.temp} °F`);
+                    $("#wind-5").text(`Wind: ${res.list[35].wind.speed} MPH`);
+                    $("#humidity-5").text(`Humidity: ${res.list[35].main.humidity} %`);
 
-                
-                    
+
+
                 })
         })
-        userSearchButtons();
+    userSearchButtons();
 }
 // ✅ Locate city coordinates
 

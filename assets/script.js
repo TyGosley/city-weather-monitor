@@ -27,13 +27,16 @@ function userInput(city) {
 }
 // TODO: create search history buttons *Local Storage*
 // TODO: create function to making btns
-// function userSearchButtons(userInput) {
-//     const cityBtn = document.createElement("button");
-//     cityBtn.innerText = "ME"
-//     cityBtn.addEventListener("click", (getWeather) =>{ 
-//     });
-//     historyList.appendChild(cityBtn)
-// }
+function userSearchButtons(userInput) {
+    const cityBtn = document.createElement("button");
+    cityBtn.setAttribute("type", "button");
+    cityBtn.innerHTML = citiesArray;
+    cityBtn.addEventListener("click", (getWeather) =>{ 
+    });
+    historyList.appendChild(cityBtn)
+   
+}
+    
     
 
 function getWeather(event, city) {
@@ -87,7 +90,7 @@ function getWeather(event, city) {
                     
                 })
         })
-
+        userSearchButtons();
 }
 // ✅ Locate city coordinates
 

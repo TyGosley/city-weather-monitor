@@ -1,7 +1,7 @@
 // declare variables
 
 const APIKey = "9e38d5126129d897b3ddb585abf79cdc";
-const currentDayEL = dayjs().format("MM DD, YYYY");
+const currentDayEL = dayjs().format("MMMM DD, YYYY");
 const displayEl = document.querySelector("#display");
 const currentTempEl = document.querySelector("#temp");
 const currentWindEL = document.querySelector("#wind");
@@ -33,30 +33,33 @@ function getWeather(event, city) {
                 .then(data => data.json())
                 .then(res => {
                     console.log(res);
-                    $("#display-1").text( `${city} (${dayjs().add(1, "days").format("MM DD, YYYY")})`);
+                    $("#display-1").text( `${city} (${dayjs().add(1, "days").format("MMMM DD, YYYY")})`);
                     $("#temp-1").text( `Temp: ${res.list[3].main.temp} °F`);
                     $("#wind-1").text( `Wind: ${res.list[3].wind.speed} MPH`);
                     $("#humidity-1").text( `Humidity: ${res.list[3].main.humidity} %`);
 
-                    // displayEl.textContent = `${city} (${currentDayEL})`
-                    // currentTempEl.textContent = `Temp: ${res.[].main.temp} °F`;
-                    // currentWindEL.textContent = `Wind: ${res.[].windtext(
-                    // currentHumidityEL.textContent = `Humidity: ${res.[].main.humidity} %`;
+                    $("#display-2").text( `${city} (${dayjs().add(2, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-2").text( `Temp: ${res.list[11].main.temp} °F`);
+                    $("#wind-2").text( `Wind: ${res.list[11].wind.speed} MPH`);
+                    $("#humidity-2").text( `Humidity: ${res.list[11].main.humidity} %`);
 
-                    // displayEl.textContent = `${city} (${currentDayEL})`
-                    // currentTempEl.textContent = `Temp: ${res.[].main.temp} °F`;
-                    // currentWindEL.textContent = `Wind: ${res.[].wind.speed} MPH`;
-                    // currentHumidityEL.textContent = `Humidity: ${res.[].main.humidity} %`;
+                    $("#display-3").text( `${city} (${dayjs().add(3, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-3").text( `Temp: ${res.list[19].main.temp} °F`);
+                    $("#wind-3").text( `Wind: ${res.list[19].wind.speed} MPH`);
+                    $("#humidity-3").text( `Humidity: ${res.list[19].main.humidity} %`);
 
-                    // displayEl.textContent = `${city} (${currentDayEL})`
-                    // currentTempEl.textContent = `Temp: ${res.[].main.temp} °F`;
-                    // currentWindEL.textContent = `Wind: ${res.[].wind.speed} MPH`;
-                    // currentHumidityEL.textContent = `Humidity: ${res.[].main.humidity} %`;
+                    $("#display-4").text( `${city} (${dayjs().add(4, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-4").text( `Temp: ${res.list[27].main.temp} °F`);
+                    $("#wind-4").text( `Wind: ${res.list[27].wind.speed} MPH`);
+                    $("#humidity-4").text( `Humidity: ${res.list[27].main.humidity} %`);
 
-                    // displayEl.textContent = `${city} (${currentDayEL})`
-                    // currentTempEl.textContent = `Temp: ${res.[].main.temp} °F`;
-                    // currentWindEL.textContent = `Wind: ${res.[].wind.speed} MPH`;
-                    // currentHumidityEL.textContent = `Humidity: ${res.[].main.humidity} %`;
+                    $("#display-5").text( `${city} (${dayjs().add(5, "days").format("MMMM DD, YYYY")})`);
+                    $("#temp-5").text( `Temp: ${res.list[35].main.temp} °F`);
+                    $("#wind-5").text( `Wind: ${res.list[35].wind.speed} MPH`);
+                    $("#humidity-5").text( `Humidity: ${res.list[35].main.humidity} %`);
+
+                
+                    
                 })
         })
 

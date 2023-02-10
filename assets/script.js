@@ -9,7 +9,7 @@ const currentHumidityEL = document.querySelector("#humidity");
 const citiesEl = document.querySelector("#cities");
 const searchBtn = document.querySelector("#searchBtn");
 const historyList = document.querySelector(".searchHistory");
-const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
+// const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
 const citiesArray = [];
 
 
@@ -27,7 +27,13 @@ function userInput(city) {
 }
 // TODO: create search history buttons *Local Storage*
 // TODO: create function to making btns
-function userSearchButtons(userInput) {
+// function userSearchButtons(userInput) {
+//     const cityBtn = document.createElement("button");
+//     cityBtn.innerText = "ME"
+//     cityBtn.addEventListener("click", (getWeather) =>{ 
+//     });
+//     historyList.appendChild(cityBtn)
+// }
     
 
 function getWeather(event, city) {

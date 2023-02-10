@@ -10,9 +10,8 @@ const citiesEl = document.querySelector("#cities");
 const searchBtn = document.querySelector("#searchBtn");
 const historyList = document.querySelector(".searchHistory");
 const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
+const citiesArray = [];
 
-
-// TODO: create search history buttons *Local Storage*
 
 
 
@@ -20,10 +19,21 @@ const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
 
 
 
-// TODO: Create function to search for city weather
+// ✅ Create function to search for city weather
+// ✅ created function for local storage
+function userInput(city) {
+    citiesArray.push(city);
+    localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
+}
+// TODO: create search history buttons *Local Storage*
+// TODO: create function to making btns
+function userSearchButtons(userInput) {
+    
+
 function getWeather(event, city) {
     event.preventDefault();
     city = citiesEl.value.trim();
+    userInput(city)
     let currentWeatherURL =
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=imperial`;
 

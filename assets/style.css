@@ -10,7 +10,7 @@
 
 header {
     text-align: center;
-    background-color: var(--american-blue);
+    background: linear-gradient(90deg, #E4E1D9, #A499B6, #9085A7, #655784, #4A406C);
     color: var(--anti-flash-white);
     border-radius: .5rem;
     transition: all 0.5s ease-in-out;
@@ -84,6 +84,6 @@ icons {
 
 /* TODO: Change cards */
  .card {
-    
+    background-color: var(--white-coffee);
  }
     

@@ -8,7 +8,16 @@ const currentWindEL = document.querySelector("#wind");
 const currentHumidityEL = document.querySelector("#humidity");
 const citiesEl = document.querySelector("#cities");
 const searchBtn = document.querySelector("#searchBtn");
-const forecastResultsEl = document.querySelector("#forecastResults");
+const historyList = document.querySelector(".searchHistory");
+const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
+
+
+// TODO: create search history buttons *Local Storage*
+
+
+
+// TODO: Add delete buttons on history searches(if I have time, see project tracker for code)
+
 
 
 // TODO: Create function to search for city weather
@@ -64,20 +73,17 @@ function getWeather(event, city) {
         })
 
 }
-// TODO: Locate city coordinates
+// ✅ Locate city coordinates
 
-// TODO: create search history buttons *Local Storage*
 
-// TODO: Add delete buttons on history searches(if I have time, see project tracker for code)
-
-// TODO: Display date(dayjs), city, temp, wind, humidity in containerMain card
+// ✅ Display date(dayjs), city, temp, wind, humidity in containerMain card
 
 // TODO:  Add icons to cards displaying weather conditions
 
-// TODO: display in imperial units
+// ✅ display in imperial units
 
-// TODO: Function to display 5 seperate cards displaying attributes in container5Day
+// ✅ Function to display 5 seperate cards displaying attributes in container5Day
 
-// TODO: Add Event Listener
+// ✅ Add Event Listener✅
 searchBtn.addEventListener("click", getWeather);
 

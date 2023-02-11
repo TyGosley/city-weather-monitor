@@ -12,7 +12,7 @@ const historyList = document.querySelector(".searchHistory");
 const searchHistoryContainer = document.querySelector('.searchHistory');
 // const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
 const citiesArray = [];
-
+// const icons = https://openweathermap.org/img/wn/10d@2x.png
 
 
 
@@ -27,18 +27,22 @@ function userInput(city) {
     localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
 }
 // TODO: create search history buttons *Local Storage*
-// TODO: create function to making btns
+// ✅ create function to making btns
 function userSearchButtons(userInput) {
+    historyList.innerHTML = "";
     console.log(citiesArray)
-    const cityBtn = document.createElement("button");
-    cityBtn.setAttribute("type", "button");
-    cityBtn.classList.add('history-btn', 'btn-history');
-    cityBtn.setAttribute('data-search', citiesArray);
-    cityBtn.textContent = citiesArray;
+    for (let i = 0; i < citiesArray.length; i++) {
+        let city = citiesArray[i];
+        let cityBtn = document.createElement("button");
+        cityBtn.setAttribute("type", "button");
+        cityBtn.classList.add('history-btn', 'btn-history');
+        cityBtn.setAttribute('data-search', citiesArray);
+        cityBtn.innerHTML = city;
 
-    cityBtn.addEventListener("click", (getWeather) => {
-    });
-    historyList.appendChild(cityBtn)
+        cityBtn.addEventListener("click", (getWeather) => {
+        });
+        historyList.appendChild(cityBtn)
+    }
 }
 
 function handleSearchHistoryClick(e) {
@@ -58,9 +62,11 @@ function getWeather(event, city) {
     event.preventDefault();
     city = citiesEl.value.trim();
     userInput(city)
+
+
     let currentWeatherURL =
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=imperial`;
-
+    console.log(city);
     fetch(currentWeatherURL)
         .then(data => data.json())
         .then(res => {
@@ -76,7 +82,7 @@ function getWeather(event, city) {
                 .then(data => data.json())
                 .then(res => {
                     console.log(res);
-                    $("#display-1").text(`${city} (${dayjs().add(1, "days").format("MMMM DD, YYYY")})`);
+                    $("#display-1").text(`${city} (${dayjs().add(1, "days").format("MMMM DD, YYYY")}) `);
                     $("#temp-1").text(`Temp: ${res.list[3].main.temp} °F`);
                     $("#wind-1").text(`Wind: ${res.list[3].wind.speed} MPH`);
                     $("#humidity-1").text(`Humidity: ${res.list[3].main.humidity} %`);

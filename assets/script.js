@@ -11,20 +11,40 @@ const searchBtn = document.querySelector("#searchBtn");
 const historyList = document.querySelector(".searchHistory");
 const searchHistoryContainer = document.querySelector('.searchHistory');
 // const historyEl = JSON.parse(localStorage.getItem("userCity")) || [];
-const citiesArray = [];
-// const icons = https://openweathermap.org/img/wn/10d@2x.png
+let citiesArray = [];
 
+getHistory();
+
+function getHistory() {
+    //get local storage and put it into cities array.
+    localStorage.setItem("cities", JSON.stringify(citiesArray));
+
+    if (citiesArray.length > 0) {
+        citiesArray = JSON.parse(localStorage.getItem("cities"));
+    }
+
+    userSearchButtons();
+}
 
 
 // TODO: Add delete buttons on history searches(if I have time, see project tracker for code)
 
-
-
 // ✅ Create function to search for city weather
 // ✅ created function for local storage
 function userInput(city) {
-    citiesArray.push(city);
-    localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
+    //get local storage and put it into citiesArray
+    localStorage.setItem("cities", JSON.stringify(citiesArray));
+
+// if there is anything in the citiesArray {
+    // json parse cities array
+// }
+    if (citiesArray.length > 0) {
+        citiesArray = JSON.parse(localStorage.getItem("cities"));
+        citiesArray.push(city);
+    } else {
+    citiesArray = [city];
+}
+localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
 }
 // TODO: create search history buttons *Local Storage*
 // ✅ create function to making btns

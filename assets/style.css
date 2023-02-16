@@ -79,17 +79,16 @@ header {
     margin-top: 0.625rem;
 }
 
-icons {
+img {
     width: 3.125rem;
     height: 3.125rem;
 } 
 
-/* TODO: Change cards */
+
  .card {
-    background-color: var(--white-coffee);
+    background-color: var(--purple-navy);
     border: .0625rem solid black;
     border-radius: .5rem;
-    background-color: var(--white-coffee);
     padding: .625rem;
   
  }

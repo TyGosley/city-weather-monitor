@@ -1,4 +1,4 @@
-// declare variables
+// Declare variables
 
 const APIKey = "9e38d5126129d897b3ddb585abf79cdc";
 const currentDayEL = dayjs().format("MMMM DD, YYYY");
@@ -13,32 +13,19 @@ const historyList = document.querySelector(".searchHistory");
 const searchHistoryContainer = document.querySelector('.searchHistory');
 let citiesArray = [];
 
-// TODO: QUESTION: SHould my getHistory have a parameter of previous search city
+
 function getHistory() {
-    //get local storage and put it into cities array.
     localStorage.getItem("citiesArray", JSON.stringify(citiesArray));
-    // if there is anything in citiesArray {
     if (citiesArray.length > 0) {
         JSON.parse(localStorage.getItem(citiesArray))
     }
-    //json parse citiesArray 
-    // }
-
     userSearchButtons();
 }
 getHistory();
 
 
-
-// ✅ Create function to search for city weather
-// ✅ created function for local storage
 function userInput(city) {
-    //get local storage and put it into citiesArray
     localStorage.getItem("citiesArray", JSON.stringify(citiesArray));
-
-
-    // if there is anything in the citiesArray {
-    // json parse cities array
     if (citiesArray.length > 0) {
         JSON.parse(localStorage.getItem(citiesArray))
         citiesArray.push(city);
@@ -47,8 +34,7 @@ function userInput(city) {
     }
     localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
 }
-// TODO: create search history buttons *Local Storage*
-// ✅ create function to making btns
+
 function userSearchButtons(userInput) {
     historyList.innerHTML = "";
     console.log(citiesArray)
@@ -70,7 +56,6 @@ function userSearchButtons(userInput) {
                 .then(res => {
                     console.log(res);
                     displayEl.textContent = `${city} (${currentDayEL})`;
-                    iconEl.textContent = `${res.weather.icon}`;
                     currentTempEl.textContent = `Temp: ${res.main.temp} °F`;
                     currentWindEL.textContent = `Wind: ${res.wind.speed} MPH`;
                     currentHumidityEL.textContent = `Humidity: ${res.main.humidity} %`;
@@ -138,7 +123,6 @@ function getWeather(event, city) {
         .then(res => {
             console.log(res);
             displayEl.textContent = `${city} (${currentDayEL})`;
-            iconEl.textContent = `${res.weather.icon}`;
             currentTempEl.textContent = `Temp: ${res.main.temp} °F`;
             currentWindEL.textContent = `Wind: ${res.wind.speed} MPH`;
             currentHumidityEL.textContent = `Humidity: ${res.main.humidity} %`;

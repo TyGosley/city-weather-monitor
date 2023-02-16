@@ -79,12 +79,6 @@ header {
     margin-top: 0.625rem;
 }
 
-img {
-    width: 3.125rem;
-    height: 3.125rem;
-} 
-
-
  .card {
     background-color: var(--purple-navy);
     border: .0625rem solid black;

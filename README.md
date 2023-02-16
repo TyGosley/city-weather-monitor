@@ -41,7 +41,7 @@ This project was my hardest to date.  It has taught me how important API's and t
 
 ## Usage
 
-To navigate to this page, please [CLICK HERE]().  To use the Chrome DevTools, simply "right click" and use the inspect function or use keyboard shortcuts by press Command+Option+I (macOS) or Control+Shift+I (Windows).
+To navigate to this page, please [CLICK HERE](https://tygosley.github.io/city-weather-monitor/).  To use the Chrome DevTools, simply "right click" and use the inspect function or use keyboard shortcuts by press Command+Option+I (macOS) or Control+Shift+I (Windows).
   
 ## Screenshot
 
